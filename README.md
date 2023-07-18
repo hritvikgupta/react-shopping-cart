@@ -67,6 +67,7 @@ To run this project locally, follow these steps:
 Contributions to the project are welcome. If you find a bug, please open an issue and describe the bug in detail. If you wish to add a new feature, feel free to fork the repository and create a pull request with your changes.
 1. Bug In the signUp portal where active tab is not changing.
 2. Adding items to cart but some items id is not rendering and therefore not adding inside cart.
+3. Add the about section
 
 ## License
 
