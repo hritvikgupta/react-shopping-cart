@@ -2,6 +2,9 @@
 
 This project is an E-Commerce application built using the MERN Stack (MongoDB, Express, React, Node.js) and TypeScript for static type checking. It demonstrates various functionalities of an online store, such as browsing products, adding items to the cart, and managing user authentication.
 
+# Preview
+https://github.com/hritvikgupta/react-shopping-cart/assets/60143996/ca8291ea-eaca-4a95-acc5-ed6b4298b61f
+
 ## Project Structure
 
 ### Frontend
