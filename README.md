@@ -4,6 +4,7 @@ This project is an E-Commerce application built using the MERN Stack (MongoDB, E
 
 # Preview
 Link To Demo: https://shopping-ekart.netlify.app/  (Only Frontend will work in preview as its not a production deployment but a development. Clone it and make changes in MongoDB links so as to start the production).
+
 https://github.com/hritvikgupta/react-shopping-cart/assets/60143996/ca8291ea-eaca-4a95-acc5-ed6b4298b61f
 
 ## Project Structure
