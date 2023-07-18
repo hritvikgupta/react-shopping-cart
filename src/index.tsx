@@ -4,14 +4,21 @@ import "./index.css";
 import App from "./App";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter } from "react-router-dom";
+// import AuthProvider from "./contexts/AuthProvider";
+import { LoginPageProvider } from "./contexts/LoginPageProvider"; // update with your file path
+
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+    <LoginPageProvider>
+      <BrowserRouter>
+        {/* <AuthProvider> */}
+        <App />
+        {/* </AuthProvider> */}
+      </BrowserRouter>
+    </LoginPageProvider>
   </React.StrictMode>
 );
 

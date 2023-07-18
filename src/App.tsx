@@ -7,6 +7,7 @@ import Store from "./pages/Store";
 import About from "./pages/About";
 import NavBar from "./components/NavBar";
 import { ShoppingCardProvider } from "./contexts/ShoppingCartContext";
+import LoginPage from "./pages/LoginPage";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/store" element={<Store />}></Route>
           <Route path="/about" element={<About />}></Route>
+          <Route path="/login/:tab" element={<LoginPage />}></Route>
         </Routes>
       </Container>
     </ShoppingCardProvider>
