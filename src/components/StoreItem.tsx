@@ -60,7 +60,15 @@ const StoreItem = ({ id, name, price, imgUrl }: ItemProps) => {
                   <div>
                     <span className="fs-3">{Quantity}</span>
                   </div>
-                  <Button onClick={() => increaseCartQuantity(id)}>+</Button>
+                  <Button
+                    onClick={() => {
+                      console.log(id, name, price);
+
+                      increaseCartQuantity(id);
+                    }}
+                  >
+                    +
+                  </Button>
                 </div>
                 <Button
                   onClick={() => removeFromCart(id)}

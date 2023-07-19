@@ -1,6 +1,6 @@
 import React from "react";
 import { useShoppingCart } from "../contexts/ShoppingCartContext";
-import StoreItem from "../data/items.json";
+import { sellingitems, getProductData } from "../utilities/ProductStore";
 import { Stack, Button } from "react-bootstrap";
 import formatCurrency from "../utilities/formatCurrency";
 
@@ -8,19 +8,22 @@ type CartItemProps = {
   id: number;
   quantity: number;
 };
+
 const CartItem = ({ id, quantity }: CartItemProps) => {
   const { removeFromCart } = useShoppingCart();
-  const item = StoreItem.find((i) => i.id === id);
-  if (item == null) return null;
+  const item = getProductData(id); // Updated this line to use your getProductData function
+  if (!item || item.length === 0) return null;
+  const product = item[0]; // As getProductData returns an array, you need to get the first element
+
   return (
     <Stack direction="horizontal" gap={2} className="d-flex align-items-center">
       <img
-        src={item.imgUrl}
+        src={product.imgUrl}
         style={{ width: "125px", objectFit: "cover", height: "75px" }}
       />
       <div className="me-auto">
         <div>
-          {item.name}{" "}
+          {product.name}{" "}
           {quantity > 1 && (
             <span className="text-muted" style={{ fontSize: "0.65rem" }}>
               x{quantity}
@@ -28,14 +31,14 @@ const CartItem = ({ id, quantity }: CartItemProps) => {
           )}
         </div>
         <div className="text-muted" style={{ fontSize: ".75rem" }}>
-          {formatCurrency(item.price)}
+          {formatCurrency(product.price)}
         </div>
       </div>
-      <div>{formatCurrency(item.price * quantity)}</div>
+      <div>{formatCurrency(product.price * quantity)}</div>
       <Button
         variant="outline-danger"
         size="sm"
-        onClick={() => removeFromCart(item.id)}
+        onClick={() => removeFromCart(product.id)}
       >
         &times;
       </Button>

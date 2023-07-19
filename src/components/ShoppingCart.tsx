@@ -4,14 +4,19 @@ import { useShoppingCart } from "../contexts/ShoppingCartContext";
 import { Stack } from "react-bootstrap";
 import CartItem from "./CartItem";
 import formatCurrency from "../utilities/formatCurrency";
-import StoreItem from "./StoreItem";
-import storeItem from "../data/items.json";
+import { sellingitems } from "../utilities/ProductStore";
+
 type ShoppingCartProps = {
   isOpen: Boolean;
 };
 
 const ShoppingCart = ({ isOpen }: ShoppingCartProps) => {
   const { cartItems, CloseCart } = useShoppingCart();
+  console.log(cartItems);
+
+  // Flatten all items in all categories into a single array
+  const allItems = Object.values(sellingitems[0]).flat();
+
   return (
     <Offcanvas show={isOpen} onHide={CloseCart} placement="end">
       <Offcanvas.Header closeButton>
@@ -26,7 +31,7 @@ const ShoppingCart = ({ isOpen }: ShoppingCartProps) => {
             Total{" "}
             {formatCurrency(
               cartItems.reduce((total, cartItem) => {
-                const item = storeItem.find((i) => i.id === cartItem.id);
+                const item = allItems.find((i) => i.id === cartItem.id);
                 return total + (item?.price || 0) * cartItem.quantity;
               }, 0)
             )}
