@@ -59,8 +59,8 @@ Here is the structure and a brief explanation of each backend folder/file:
 
 To run this project locally, follow these steps:
 
-1. Clone the repository to your local machine using the command `git clone https://github.com/<your-username>/<repository-name>.git`.
-2. Navigate into the project directory using `cd <repository-name>`.
+1. Clone the repository to your local machine using the command `git clone https://github.com/hritvikgupta/react-shopping-cart.git`.
+2. Navigate into the project directory using `cd react-shopping-cart`.
 3. Install all the necessary dependencies using the command `npm install`.
 4. Start the application using the command `npm start`. The application will now be running on http://localhost:3000.
 
